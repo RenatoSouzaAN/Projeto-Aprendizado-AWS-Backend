@@ -1,4 +1,16 @@
-# Projeto-Luiggi
+# Projeto-AWS (AWS-Lambda + SQS + DynamoDB + NodeJS)
+
+Projeto de aprendizado onde uma API POST em NodeJS recebe um payload de uma transação (idempotencyId, amount, type: credit /debit).
+
+Essa rota executa uma função que coloca a transação em uma AWS SQS (fila), usando SDK da AWS.
+
+Junto, uma função AWS Lambda conectada nessa SQS que pegua cada mensagem e salva num banco de dados AWS DynamoDB.
+
+Foi criado um script de teste para criar 100 transações diferentes e fazer a requisição POST.
+
+Foi feita uma tela simples usando Next.JS que exibe as transações salvas no DynamoDB, a partir de uma rota GET.
+
+Link para o front-end: https://github.com/RenatoSouzaAN/Projeto-Aprendizado-AWS-Frontend
 
 ## Parte backend do projeto
 
